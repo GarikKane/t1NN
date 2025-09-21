@@ -1,0 +1,7 @@
+targets:
+  - name: Example Site
+    url: https://example.com
+    interval: 30
+  - name: YourSite
+    url: https://your-site.example
+    interval: 60
