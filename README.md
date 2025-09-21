@@ -1,4 +1,4 @@
-# Uptime Monitor - MVP
+# Uptime Monitor
 
 ## Запуск (локально, с Docker)
 1. Скопируйте `.env.example` в `.env` и заполните переменные.
