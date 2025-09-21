@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+  monitor:
+    build: ./monitor
+    container_name: uptime-monitor
+    volumes:
+      - ./data:/data
+      - ./monitor/targets.yml:/app/targets.yml:ro
+    environment:
+      - CHECK_INTERVAL=30
+      - REQUEST_TIMEOUT=10
+      - TELEGRAM_TOKEN=${TELEGRAM_TOKEN}
+      - TELEGRAM_CHAT_ID=${TELEGRAM_CHAT_ID}
+      - SMTP_HOST=${SMTP_HOST}
+      - SMTP_PORT=${SMTP_PORT}
+      - SMTP_USER=${SMTP_USER}
+      - SMTP_PASS=${SMTP_PASS}
+      - EMAIL_TO=${EMAIL_TO}
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
